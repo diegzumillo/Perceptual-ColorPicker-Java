@@ -299,7 +299,7 @@ public class DocController implements Initializable {
     @FXML
     private void menuDivisionClicked(MouseEvent event) {
         Label l = (Label) event.getSource();
-        if (l == mPlusDivision && diviSides < 7) {
+        if (l == mPlusDivision && diviSides < 10) {
             diviSides++;
         } else if (l == mMoinsDivision && diviSides > 3) {
             diviSides--;
@@ -622,7 +622,14 @@ public class DocController implements Initializable {
                         x = (int) (215 + _lab[2] * 2.15);
                         y = (int) (0 + _lab[0] * 2.15);
                     }
-                    gc.setFill(Color.rgb((int) rgb[0], (int) rgb[1], (int) rgb[2]));
+                    float factor = (float)7/(float)255;
+                    float r = rgb[0] * factor;
+                    float g = rgb[1] * factor;
+                    float b = rgb[2] * factor;
+                    int ri = (int)r * 255/7;
+                    int gi = (int)g * 255/7;
+                    int bi = (int)b * 255/7;
+                    gc.setFill(Color.rgb( ri, gi, bi ));
                     gc.fillRect(x, 430 - y, 3, 3);
                 }
             }
@@ -654,7 +661,16 @@ public class DocController implements Initializable {
                         x = (int) (0 + _lch[2] * 430 / 360);
                         y = (int) (0 + _lch[0] * 430 / 360);
                     }
-                    gc.setFill(Color.rgb((int) rgb[0], (int) rgb[1], (int) rgb[2]));
+                    float factor = (float)7/(float)255;
+                    float r = rgb[0] * factor;
+                    float g = rgb[1] * factor;
+                    float b = rgb[2] * factor;
+                    int ri = (int)r * 255/7;
+                    int gi = (int)g * 255/7;
+                    int bi = (int)b * 255/7;
+                    gc.setFill(Color.rgb( ri, gi, bi ));
+                    //this is one of the planes!
+                    // gc.setFill(Color.RED);
                     gc.fillRect(x, 430 - y, 3, 3);
                 }
             }
@@ -674,7 +690,8 @@ public class DocController implements Initializable {
             r.setArcHeight(10);
             r.setArcWidth(10);
             if (c != null) {
-                r.setFill(c);
+                //this draws the first palette entry
+                 r.setFill(c);
             }
             hboxPalette.getChildren().add(r);
             for (int i = 0; i < droite.circleCarets.length; i++) {
