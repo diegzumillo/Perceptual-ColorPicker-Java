@@ -1,9 +1,10 @@
 # Perceptual-ColorPicker (9-bit fork)
-![alt text](https://raw.githubusercontent.com/OlivierVicario/Perceptual-ColorPicker-Java/master/src/perceptualcolorpicker/help/ensemble.png)
 
 This fork simply limits the bit-depth of the color so it can be used by, well, me. It's useful for pixel artists working with old systems. 
 
 The original readme of the project:
+
+![alt text](https://raw.githubusercontent.com/OlivierVicario/Perceptual-ColorPicker-Java/master/src/perceptualcolorpicker/help/ensemble.png)
 
 What the project does
 
